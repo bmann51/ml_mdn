@@ -1,19 +1,21 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Constants
 num_samples = 200
-
-# Generate sample data
-x = np.random.uniform(-1, 1, num_samples)
+r = 1
 
 # Noise
 noise_mean = 0     
 noise_std_dev = 0.1
-noise = np.random.normal(noise_mean, noise_std_dev, num_samples)
+noise_theta = np.random.normal(noise_mean, noise_std_dev, num_samples)
+noise_r = np.random.normal(noise_mean, noise_std_dev, num_samples)
 
+theta = np.random.uniform(0, 2 * np.pi, num_samples)
 
-sign = np.random.choice([-1, 1], num_samples)
-y = sign * np.sqrt(1-x**2) + noise
+# Generate x and y
+x = np.cos(theta+ noise_theta) * (r + noise_r)
+y = np.sin(theta+ noise_theta) * (r + noise_r)
 
 
 # Create a plot
