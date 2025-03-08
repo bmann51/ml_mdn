@@ -8,14 +8,13 @@ r = 1
 # Noise
 noise_mean = 0     
 noise_std_dev = 0.1
-noise_theta = np.random.normal(noise_mean, noise_std_dev, num_samples)
-noise_r = np.random.normal(noise_mean, noise_std_dev, num_samples)
+noise = np.random.normal(noise_mean, noise_std_dev, num_samples)
 
 theta = np.random.uniform(0, 2 * np.pi, num_samples)
 
 # Generate x and y
-x = np.cos(theta+ noise_theta) * (r + noise_r)
-y = np.sin(theta+ noise_theta) * (r + noise_r)
+x = np.cos(theta) * (r + noise)
+y = np.sin(theta) * (r + noise)
 
 
 # Create a plot
